@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
+            <string>Avenir-Book</string>
+            <string>Avenir-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calc_Classic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-JG-saT" userLabel="AdView" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8A3-5G-OSe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-Mp-zDH" userLabel="Numpad">
+                                <rect key="frame" x="0.0" y="203" width="320" height="315"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0b-d5-7eC">
+                                        <rect key="frame" x="241.5" y="251.5" width="78.5" height="61.5"/>
+                                        <color key="backgroundColor" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="X0b-d5-7eC" secondAttribute="height" multiplier="13:10" id="LJ1-eY-NKr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.60784313725490191" green="0.72941176470588232" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQQ-i0-15U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-3v-rA9" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="161" y="251.5" width="78.5" height="61.5"/>
+                                        <color key="backgroundColor" red="0.6985747218132019" green="0.70276623964309692" blue="0.69866138696670532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rZ8-3v-rA9" secondAttribute="height" multiplier="13:10" id="ECi-pn-8Zb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="+/-">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="invertPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dd9-F8-3Fn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNe-lA-Qlc" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="81" y="251.5" width="78" height="61.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hNe-lA-Qlc" secondAttribute="height" multiplier="13:10" id="4dl-cx-RaL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="60"/>
+                                        <state key="normal" title="·">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="decimalPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCd-uA-Un5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60u-WE-B6f" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="251.5" width="79" height="61.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="60u-WE-B6f" secondAttribute="height" multiplier="13:10" id="58E-tY-yJ0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zvL-uX-2sG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-iw-AOU">
+                                        <rect key="frame" x="241.5" y="189" width="78.5" height="60.5"/>
+                                        <color key="backgroundColor" red="0.59926700590000004" green="0.72024548050000003" blue="0.93182277680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hFx-iw-AOU" secondAttribute="height" multiplier="13:10" id="0G3-zX-8p5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.60784313725490191" green="0.72941176470588232" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkd-MW-AeL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aas-Mg-3W8" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="161" y="189" width="78.5" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aas-Mg-3W8" secondAttribute="height" multiplier="13:10" id="ecI-U5-vil"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cII-EI-sFE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3O-Fj-KvH" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="81" y="189" width="78" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="o3O-Fj-KvH" secondAttribute="height" multiplier="13:10" id="npQ-nN-n2j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nli-A2-TKe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoA-Bt-0xd" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="189" width="79" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CoA-Bt-0xd" secondAttribute="height" multiplier="13:10" id="UBo-q7-vvi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RxA-n7-dnq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2K-Dm-0sP">
+                                        <rect key="frame" x="241.5" y="126.5" width="78.5" height="60.5"/>
+                                        <color key="backgroundColor" red="0.59926700590000004" green="0.72024548050000003" blue="0.93182277680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r2K-Dm-0sP" secondAttribute="height" multiplier="13:10" id="w5c-2s-29P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="60"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.60784313725490191" green="0.72941176470588232" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2PT-6W-h19"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eq-Y0-MAa" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="161" y="126.5" width="78.5" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7eq-Y0-MAa" secondAttribute="height" multiplier="13:10" id="TMM-jO-3SR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e9J-oz-KFr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-4X-VCu" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="81" y="126.5" width="78" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wfM-4X-VCu" secondAttribute="height" multiplier="13:10" id="HPN-hG-zTA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b2Y-mT-oIO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDh-gr-VAy" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="126.5" width="79" height="60.5"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KDh-gr-VAy" secondAttribute="height" multiplier="13:10" id="rfK-L4-q7W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Y7-SF-hnQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7W-2Z-RrS">
+                                        <rect key="frame" x="241.5" y="63.5" width="78.5" height="61"/>
+                                        <color key="backgroundColor" red="0.59926700590000004" green="0.72024548050000003" blue="0.93182277680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="p7W-2Z-RrS" secondAttribute="height" multiplier="13:10" id="3fI-wg-2fK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="x">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.60784313725490191" green="0.72941176470588232" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYt-EF-72W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pv-wT-Edo" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="161" y="63.5" width="78.5" height="61"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1pv-wT-Edo" secondAttribute="height" multiplier="13:10" id="1Br-e1-sAY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFa-rF-GTi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKE-vy-AXg" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="81" y="63.5" width="78" height="61"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tKE-vy-AXg" secondAttribute="height" multiplier="13:10" id="W6L-UM-sf0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uPI-x7-hZ7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-iP-TwI" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="63.5" width="79" height="61"/>
+                                        <color key="backgroundColor" red="0.69857472180000002" green="0.70276623959999995" blue="0.69866138700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aIR-iP-TwI" secondAttribute="height" multiplier="13:10" id="ZAw-vC-pwg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSc-do-kFx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns4-PD-Uhz" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="0.5" width="79" height="61"/>
+                                        <color key="backgroundColor" red="0.32512980699539185" green="0.39911568164825439" blue="0.59511196613311768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="height" multiplier="13:10" id="Nl6-VP-cbW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="(">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.33333333333333331" green="0.40784313725490196" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.3411764705882353" green="0.41568627450980389" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openParenthesisPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ryu-hm-VLM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-Zj-tu9">
+                                        <rect key="frame" x="241.5" y="0.5" width="78.5" height="61"/>
+                                        <color key="backgroundColor" red="0.59926700590000004" green="0.72024548050000003" blue="0.93182277680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Cbv-Zj-tu9" secondAttribute="height" multiplier="13:10" id="Swi-4p-G44"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.59926700592041016" green="0.72024548053741455" blue="0.93182277679443359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.60784313725490191" green="0.72941176470588232" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4x-wu-5OS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-fL-V5V" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="81" y="0.5" width="78" height="61"/>
+                                        <color key="backgroundColor" red="0.32512980699539185" green="0.39911568164825439" blue="0.59511196613311768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hW4-fL-V5V" secondAttribute="height" multiplier="13:10" id="b8M-pz-VyB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title=")">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.33333333333333331" green="0.40784313725490196" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.3411764705882353" green="0.41568627450980389" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeParenthesisPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeF-jb-5u9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-iY-vQC" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="161" y="0.5" width="78.5" height="61"/>
+                                        <color key="backgroundColor" red="0.32512980699539185" green="0.39911568164825439" blue="0.59511196613311768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5ya-iY-vQC" secondAttribute="height" multiplier="13:10" id="TAo-Rr-4FL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.33333333333333331" green="0.40784313725490196" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.3411764705882353" green="0.41568627450980389" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIB-Wm-hvX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="rZ8-3v-rA9" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="1bn-RU-U3e"/>
+                                    <constraint firstItem="o3O-Fj-KvH" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="2x9-Qu-RKE"/>
+                                    <constraint firstAttribute="bottom" secondItem="hNe-lA-Qlc" secondAttribute="bottom" constant="2" id="38j-1g-lx1"/>
+                                    <constraint firstItem="CoA-Bt-0xd" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="4d5-oK-iRF"/>
+                                    <constraint firstItem="hFx-iw-AOU" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="4ei-AG-TA3"/>
+                                    <constraint firstItem="60u-WE-B6f" firstAttribute="top" secondItem="CoA-Bt-0xd" secondAttribute="bottom" constant="2" id="5tO-1X-iYg"/>
+                                    <constraint firstItem="aas-Mg-3W8" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="7Z7-hh-dy1"/>
+                                    <constraint firstItem="p7W-2Z-RrS" firstAttribute="leading" secondItem="1pv-wT-Edo" secondAttribute="trailing" constant="2" id="9DN-SL-U7e"/>
+                                    <constraint firstItem="aIR-iP-TwI" firstAttribute="top" secondItem="ns4-PD-Uhz" secondAttribute="bottom" constant="2" id="AT9-Oy-UxX"/>
+                                    <constraint firstAttribute="trailing" secondItem="r2K-Dm-0sP" secondAttribute="trailing" id="EdJ-sJ-lak"/>
+                                    <constraint firstItem="ns4-PD-Uhz" firstAttribute="top" secondItem="7vd-Mp-zDH" secondAttribute="top" id="GNh-e0-hVv"/>
+                                    <constraint firstItem="aIR-iP-TwI" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="GrJ-iA-NpI"/>
+                                    <constraint firstItem="r2K-Dm-0sP" firstAttribute="top" secondItem="p7W-2Z-RrS" secondAttribute="bottom" constant="2" id="GtX-BN-jfa"/>
+                                    <constraint firstItem="5ya-iY-vQC" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="HHe-dg-7v8"/>
+                                    <constraint firstItem="tKE-vy-AXg" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="IV3-ij-alC"/>
+                                    <constraint firstItem="o3O-Fj-KvH" firstAttribute="leading" secondItem="CoA-Bt-0xd" secondAttribute="trailing" constant="2" id="JAR-Ap-dbQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="rZ8-3v-rA9" secondAttribute="bottom" constant="2" id="Jrm-hc-Orc"/>
+                                    <constraint firstItem="X0b-d5-7eC" firstAttribute="top" secondItem="hFx-iw-AOU" secondAttribute="bottom" constant="2" id="K5g-3G-EAT"/>
+                                    <constraint firstItem="CoA-Bt-0xd" firstAttribute="top" secondItem="KDh-gr-VAy" secondAttribute="bottom" constant="2" id="MCT-OX-wVM"/>
+                                    <constraint firstItem="hNe-lA-Qlc" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="MPX-vG-NZI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cbv-Zj-tu9" secondAttribute="trailing" id="NBv-5W-2jB"/>
+                                    <constraint firstItem="hW4-fL-V5V" firstAttribute="top" secondItem="7vd-Mp-zDH" secondAttribute="top" id="NNs-MV-v2K"/>
+                                    <constraint firstItem="KDh-gr-VAy" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="NW2-Zw-x3H"/>
+                                    <constraint firstItem="X0b-d5-7eC" firstAttribute="leading" secondItem="rZ8-3v-rA9" secondAttribute="trailing" constant="2" id="NwG-bP-But"/>
+                                    <constraint firstItem="r2K-Dm-0sP" firstAttribute="leading" secondItem="7eq-Y0-MAa" secondAttribute="trailing" constant="2" id="OXp-1e-CR8"/>
+                                    <constraint firstItem="hFx-iw-AOU" firstAttribute="leading" secondItem="aas-Mg-3W8" secondAttribute="trailing" constant="2" id="PAi-c2-NB4"/>
+                                    <constraint firstItem="p7W-2Z-RrS" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="Pvh-4N-wCG"/>
+                                    <constraint firstItem="hNe-lA-Qlc" firstAttribute="leading" secondItem="60u-WE-B6f" secondAttribute="trailing" constant="2" id="QNQ-6g-1Kp"/>
+                                    <constraint firstAttribute="bottom" secondItem="X0b-d5-7eC" secondAttribute="bottom" constant="2" id="QaH-xq-8SY"/>
+                                    <constraint firstItem="7eq-Y0-MAa" firstAttribute="leading" secondItem="wfM-4X-VCu" secondAttribute="trailing" constant="2" id="QvD-hf-haO"/>
+                                    <constraint firstAttribute="bottom" secondItem="60u-WE-B6f" secondAttribute="bottom" constant="2" id="SE3-rh-j7Y"/>
+                                    <constraint firstItem="rZ8-3v-rA9" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="SGw-gq-c7w"/>
+                                    <constraint firstItem="1pv-wT-Edo" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="Sc8-sa-3mH"/>
+                                    <constraint firstItem="5ya-iY-vQC" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="TBu-Lr-9Qu"/>
+                                    <constraint firstItem="CoA-Bt-0xd" firstAttribute="leading" secondItem="7vd-Mp-zDH" secondAttribute="leading" id="TJt-BL-N0y"/>
+                                    <constraint firstItem="tKE-vy-AXg" firstAttribute="top" secondItem="hW4-fL-V5V" secondAttribute="bottom" constant="2" id="Tjp-s7-DfN"/>
+                                    <constraint firstItem="r2K-Dm-0sP" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="UIg-RU-d4n"/>
+                                    <constraint firstItem="7eq-Y0-MAa" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="Unv-tk-uNK"/>
+                                    <constraint firstItem="7eq-Y0-MAa" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="Urk-8r-of3"/>
+                                    <constraint firstItem="tKE-vy-AXg" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="Utc-FW-8x5"/>
+                                    <constraint firstItem="60u-WE-B6f" firstAttribute="leading" secondItem="7vd-Mp-zDH" secondAttribute="leading" id="WjR-PQ-jVh"/>
+                                    <constraint firstItem="rZ8-3v-rA9" firstAttribute="leading" secondItem="hNe-lA-Qlc" secondAttribute="trailing" constant="2" id="Wvr-9w-lT6"/>
+                                    <constraint firstAttribute="trailing" secondItem="X0b-d5-7eC" secondAttribute="trailing" id="XJm-bV-4xX"/>
+                                    <constraint firstItem="7eq-Y0-MAa" firstAttribute="top" secondItem="1pv-wT-Edo" secondAttribute="bottom" constant="2" id="Yut-Ii-IhS"/>
+                                    <constraint firstItem="wfM-4X-VCu" firstAttribute="top" secondItem="tKE-vy-AXg" secondAttribute="bottom" constant="2" id="ZKu-xV-6jV"/>
+                                    <constraint firstItem="KDh-gr-VAy" firstAttribute="top" secondItem="aIR-iP-TwI" secondAttribute="bottom" constant="2" id="Zem-qR-TB9"/>
+                                    <constraint firstItem="wfM-4X-VCu" firstAttribute="leading" secondItem="KDh-gr-VAy" secondAttribute="trailing" constant="2" id="a1w-ze-ygE"/>
+                                    <constraint firstItem="wfM-4X-VCu" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="asF-x9-Fby"/>
+                                    <constraint firstItem="5ya-iY-vQC" firstAttribute="leading" secondItem="hW4-fL-V5V" secondAttribute="trailing" constant="2" id="b7Y-rs-lnj"/>
+                                    <constraint firstItem="1pv-wT-Edo" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="bdv-46-xT9"/>
+                                    <constraint firstItem="p7W-2Z-RrS" firstAttribute="top" secondItem="Cbv-Zj-tu9" secondAttribute="bottom" constant="2" id="brt-PW-aci"/>
+                                    <constraint firstItem="hFx-iw-AOU" firstAttribute="top" secondItem="r2K-Dm-0sP" secondAttribute="bottom" constant="2" id="cOG-r1-qVA"/>
+                                    <constraint firstItem="KDh-gr-VAy" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="eq2-yA-jjD"/>
+                                    <constraint firstAttribute="height" constant="300" id="ft0-Zm-bPL"/>
+                                    <constraint firstItem="60u-WE-B6f" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="gMW-Wh-oMg"/>
+                                    <constraint firstItem="hFx-iw-AOU" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="h35-nR-iOD"/>
+                                    <constraint firstItem="r2K-Dm-0sP" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="hET-sw-VyK"/>
+                                    <constraint firstItem="wfM-4X-VCu" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="hgB-to-zDy"/>
+                                    <constraint firstAttribute="trailing" secondItem="hFx-iw-AOU" secondAttribute="trailing" id="i3n-Vb-5hW"/>
+                                    <constraint firstItem="hW4-fL-V5V" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="irx-eZ-m5u"/>
+                                    <constraint firstItem="5ya-iY-vQC" firstAttribute="top" secondItem="7vd-Mp-zDH" secondAttribute="top" id="jIM-M4-I20"/>
+                                    <constraint firstItem="1pv-wT-Edo" firstAttribute="leading" secondItem="tKE-vy-AXg" secondAttribute="trailing" constant="2" id="jUK-FM-wyv"/>
+                                    <constraint firstItem="aas-Mg-3W8" firstAttribute="leading" secondItem="o3O-Fj-KvH" secondAttribute="trailing" constant="2" id="jYw-Ed-5uM"/>
+                                    <constraint firstItem="CoA-Bt-0xd" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="k4e-Ak-zMw"/>
+                                    <constraint firstItem="Cbv-Zj-tu9" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="kJB-dR-IdX"/>
+                                    <constraint firstItem="1pv-wT-Edo" firstAttribute="top" secondItem="5ya-iY-vQC" secondAttribute="bottom" constant="2" id="l3j-wY-fvW"/>
+                                    <constraint firstItem="aas-Mg-3W8" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="lME-aQ-x5n"/>
+                                    <constraint firstItem="aIR-iP-TwI" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="n6D-5u-R6y"/>
+                                    <constraint firstItem="aIR-iP-TwI" firstAttribute="leading" secondItem="7vd-Mp-zDH" secondAttribute="leading" id="nI3-Ih-Qow"/>
+                                    <constraint firstItem="tKE-vy-AXg" firstAttribute="leading" secondItem="aIR-iP-TwI" secondAttribute="trailing" constant="2" id="nca-8f-1I5"/>
+                                    <constraint firstItem="KDh-gr-VAy" firstAttribute="leading" secondItem="7vd-Mp-zDH" secondAttribute="leading" id="oS4-UW-sdH"/>
+                                    <constraint firstItem="X0b-d5-7eC" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="obn-tG-FNx"/>
+                                    <constraint firstItem="60u-WE-B6f" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="po2-uY-ARn"/>
+                                    <constraint firstItem="Cbv-Zj-tu9" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="rW1-it-NK3"/>
+                                    <constraint firstAttribute="trailing" secondItem="p7W-2Z-RrS" secondAttribute="trailing" id="rWQ-14-a5u"/>
+                                    <constraint firstItem="hW4-fL-V5V" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="sUm-v7-eEV"/>
+                                    <constraint firstItem="hW4-fL-V5V" firstAttribute="leading" secondItem="ns4-PD-Uhz" secondAttribute="trailing" constant="2" id="sw1-0X-x5i"/>
+                                    <constraint firstItem="o3O-Fj-KvH" firstAttribute="top" secondItem="wfM-4X-VCu" secondAttribute="bottom" constant="2" id="vhe-yc-5Y4"/>
+                                    <constraint firstItem="aas-Mg-3W8" firstAttribute="top" secondItem="7eq-Y0-MAa" secondAttribute="bottom" constant="2" id="voN-Ph-8dw"/>
+                                    <constraint firstItem="hNe-lA-Qlc" firstAttribute="top" secondItem="o3O-Fj-KvH" secondAttribute="bottom" constant="2" id="vpv-bM-rgC"/>
+                                    <constraint firstItem="Cbv-Zj-tu9" firstAttribute="top" secondItem="7vd-Mp-zDH" secondAttribute="top" id="vtY-fN-imG"/>
+                                    <constraint firstItem="rZ8-3v-rA9" firstAttribute="top" secondItem="aas-Mg-3W8" secondAttribute="bottom" constant="2" id="wQ1-aP-eio"/>
+                                    <constraint firstItem="hNe-lA-Qlc" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="xDu-ah-FPY"/>
+                                    <constraint firstItem="o3O-Fj-KvH" firstAttribute="width" secondItem="ns4-PD-Uhz" secondAttribute="width" id="xZN-Md-Hza"/>
+                                    <constraint firstItem="ns4-PD-Uhz" firstAttribute="leading" secondItem="7vd-Mp-zDH" secondAttribute="leading" id="yTU-nQ-HJp"/>
+                                    <constraint firstItem="X0b-d5-7eC" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="yeo-rC-1LR"/>
+                                    <constraint firstItem="p7W-2Z-RrS" firstAttribute="height" secondItem="ns4-PD-Uhz" secondAttribute="height" id="z29-S4-RgQ"/>
+                                    <constraint firstItem="Cbv-Zj-tu9" firstAttribute="leading" secondItem="5ya-iY-vQC" secondAttribute="trailing" constant="2" id="zDg-Ht-gkT"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ft0-Zm-bPL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVq-BQ-23V">
+                                <rect key="frame" x="68" y="176" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="PN8-eG-Sew"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydK-xG-YfV">
+                                <rect key="frame" x="2" y="180" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DgN-qM-zDD"/>
+                                    <constraint firstAttribute="width" constant="62" id="b4E-71-8S5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="ory-nr-96u">
+                                <rect key="frame" x="2" y="43" width="316" height="131"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kld-Bd-xHA">
+                                <rect key="frame" x="2" y="20" width="316" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Rxt-eU-9aB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ory-nr-96u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="8te-oc-9Cd"/>
+                            <constraint firstItem="7vd-Mp-zDH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AbJ-Jg-G1e"/>
+                            <constraint firstItem="HVq-BQ-23V" firstAttribute="leading" secondItem="ydK-xG-YfV" secondAttribute="trailing" constant="4" id="C0v-RO-K5k"/>
+                            <constraint firstItem="90E-JG-saT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D5s-G8-SyL"/>
+                            <constraint firstItem="7vd-Mp-zDH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EMU-Np-P5P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HVq-BQ-23V" secondAttribute="trailing" constant="2" id="IMA-ut-6JG"/>
+                            <constraint firstItem="ydK-xG-YfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="KKt-El-eqv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kld-Bd-xHA" secondAttribute="trailing" constant="2" id="KUc-rc-mF7"/>
+                            <constraint firstItem="Kld-Bd-xHA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="L9y-gc-gMW"/>
+                            <constraint firstItem="ory-nr-96u" firstAttribute="top" secondItem="Kld-Bd-xHA" secondAttribute="bottom" constant="2" id="MIC-H6-Ddx"/>
+                            <constraint firstItem="90E-JG-saT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NuP-QD-aX1"/>
+                            <constraint firstItem="HVq-BQ-23V" firstAttribute="top" secondItem="ory-nr-96u" secondAttribute="bottom" constant="2" id="RpJ-mI-An3"/>
+                            <constraint firstItem="90E-JG-saT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yf8-kl-ray"/>
+                            <constraint firstItem="90E-JG-saT" firstAttribute="top" secondItem="7vd-Mp-zDH" secondAttribute="bottom" id="eD6-qk-yqd"/>
+                            <constraint firstItem="Kld-Bd-xHA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fpW-nu-9Q3"/>
+                            <constraint firstItem="7vd-Mp-zDH" firstAttribute="top" secondItem="ydK-xG-YfV" secondAttribute="bottom" constant="2" id="r0s-yt-bj3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ory-nr-96u" secondAttribute="trailing" constant="2" id="u1c-Sw-WRl"/>
+                            <constraint firstItem="7vd-Mp-zDH" firstAttribute="top" secondItem="HVq-BQ-23V" secondAttribute="bottom" constant="2" id="xAx-6F-1zD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="90E-JG-saT" id="P72-9F-0c3"/>
+                        <outlet property="clearButton" destination="5ya-iY-vQC" id="LKk-8k-iGG"/>
+                        <outlet property="mainLabel" destination="ory-nr-96u" id="ZUc-rE-dto"/>
+                        <outlet property="openParenthesis" destination="ns4-PD-Uhz" id="gD6-hy-Qer"/>
+                        <outlet property="resultLabel" destination="HVq-BQ-23V" id="Wpg-Yn-idw"/>
+                        <outlet property="smallLabel" destination="Kld-Bd-xHA" id="OjK-fJ-CvJ"/>
+                        <outletCollection property="operandButton" destination="Cbv-Zj-tu9" collectionClass="NSMutableArray" id="OH8-Yw-o7b"/>
+                        <outletCollection property="operandButton" destination="p7W-2Z-RrS" collectionClass="NSMutableArray" id="rSe-a2-Z2j"/>
+                        <outletCollection property="operandButton" destination="r2K-Dm-0sP" collectionClass="NSMutableArray" id="JFG-CE-gzN"/>
+                        <outletCollection property="operandButton" destination="hFx-iw-AOU" collectionClass="NSMutableArray" id="std-2U-9j7"/>
+                        <outletCollection property="operandButton" destination="X0b-d5-7eC" collectionClass="NSMutableArray" id="r0b-e7-qac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="131.25"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,15 @@
+PODS:
+  - Google-Mobile-Ads-SDK (7.26.0)
+  - SwiftyButton (0.7.0)
+
+DEPENDENCIES:
+  - Google-Mobile-Ads-SDK
+  - SwiftyButton
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: 22d4a6fe18d526adcc12a86d8cc2d53872700966
+  SwiftyButton: f0982849c00ef5a0ed0852202d00201af0943000
+
+PODFILE CHECKSUM: df10b7b8d6cda97aac76968e405ba64101255e2b
+
+COCOAPODS: 1.2.0
